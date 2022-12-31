@@ -12,7 +12,7 @@ By default it assumes the following button setup:
 * Left: <kbd>E</kbd>
 * Crouch: <kbd>R</kbd>
 * Right: <kbd>F</kbd>
-* Space: <kbd>Space</kbd>
+* Jump: <kbd>Space</kbd>
 
 Note: Run it as Administrator if your game is also running as Administrator.
 
