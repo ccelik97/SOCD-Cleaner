@@ -24,38 +24,37 @@ Return
 Return
 
 ~e up::
-if(GetKeyState("f", "p"))
-    SendInput {f down}
+    if(GetKeyState("f", "p"))
+        SendInput {f down}
 Return
 
 ~f up::
-if(GetKeyState("e", "p"))
-    SendInput {e down}
+    if(GetKeyState("e", "p"))
+        SendInput {e down}
 Return
 
-;; * Pressing both Jump & Crouch buttons inputs only Jump,
-;; * releasing Jump inputs Crouch.
+;; * Pressing both Jump & Crouch buttons cancels each other.
 ;; ?   Jump: space
 ;; ? Crouch: r
 
-~space::
-    if(GetKeyState("r", "p"))
-        SendInput {space down}{R up}
-Return
-
-~space up::
-if(GetKeyState("r", "p"))
-    SendInput {r down}
-Return
-
 ~r::
     if(GetKeyState("space", "p"))
-        SendInput {r up}{space down}
+        SendInput {r up}{space up}
+Return
+
+~space::
+    if(GetKeyState("r", "p"))
+        SendInput {r up}{space up}
 Return
 
 ~r up::
-if(GetKeyState("space", "p"))
-    SendInput {space down}
+    if(GetKeyState("space", "p"))
+        SendInput {space down}
+Return
+
+~space up::
+    if(GetKeyState("r", "p"))
+        SendInput {r down}
 Return
 
 ;; ! BSDK
